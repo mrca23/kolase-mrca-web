@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRCA - Pembuat Kolase Horizontal</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <h1 id="website-title">MRCA</h1>
+        <h2>Gabungkan Foto Horizontal (Kolase)</h2>
+        <p>Unggah 2 atau lebih gambar. Seret gambar di kolase untuk mengatur ulang. Proses terjadi di browser Anda.</p>
+        
+        <label for="file-input" class="custom-file-upload">
+            Pilih Foto (Min. 2 Gambar)
+        </label>
+        <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+        
+        <div id="status-message">Silakan pilih gambar untuk memulai.</div>
+        
+        <div id="canvas-wrapper">
+            <canvas id="collage-canvas"></canvas>
+        </div>
+
+        <button id="download-btn" disabled>Unduh Kolase (Kualitas Terbaik)</button>
+        
+        <p class="note">Semua pemrosesan gambar dilakukan di perangkat Anda untuk menjaga privasi dan kualitas.</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

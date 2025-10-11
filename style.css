@@ -1,0 +1,130 @@
+/* Import Google Font untuk estetika nama web */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
+/* ==== Mobile-First Styling ==== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px 10px;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 700px; 
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#website-title {
+    font-family: 'Playfair Display', serif; /* Font estetika untuk nama web */
+    font-size: 2.8em;
+    color: #007bff;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h2 { /* Ini untuk "Gabungkan Foto Horizontal" */
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Tombol Upload */
+.custom-file-upload {
+    display: block;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#download-btn {
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+#download-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#download-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Area Canvas */
+#canvas-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-x: auto; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: grab; /* Menandakan bisa diseret */
+}
+
+#canvas-wrapper.dragging {
+    cursor: grabbing;
+}
+
+#collage-canvas {
+    display: block;
+    max-width: none; 
+}
+
+#status-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ffc107;
+    color: #333;
+    border-radius: 4px;
+    display: none;
+    font-weight: bold;
+}
+
+/* Hapus semua style untuk #order-controls, #sortable-list, .image-order-item, .sortable-ghost */
+
+/* Penyesuaian Responsif */
+@media (min-width: 768px) {
+    #website-title {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .custom-file-upload, #download-btn {
+        max-width: 45%; 
+        display: inline-block;
+    }
+    .custom-file-upload {
+        margin-right: 10px;
+    }
+}
