@@ -25,14 +25,14 @@ body {
 }
 
 #website-title {
-    font-family: 'Playfair Display', serif; /* Font estetika untuk nama web */
+    font-family: 'Playfair Display', serif;
     font-size: 2.8em;
     color: #007bff;
     margin-bottom: 5px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-h2 { /* Ini untuk "Gabungkan Foto Horizontal" */
+h2 { 
     color: #007bff;
     font-size: 1.5em;
     margin-bottom: 5px;
@@ -59,6 +59,14 @@ p {
     text-align: center;
 }
 
+/* Container untuk tombol aksi (diperbaiki untuk satu tombol) */
+.action-buttons {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
 #download-btn {
     padding: 15px;
     background-color: #007bff;
@@ -76,19 +84,23 @@ p {
     background-color: #0056b3;
 }
 
+/* Tombol Dinonaktifkan */
 #download-btn:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
 
+
 /* Area Canvas */
 #canvas-wrapper {
     width: 100%;
+    min-height: 200px; 
     margin-bottom: 20px;
     overflow-x: auto; 
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; 
     border-radius: 8px;
-    cursor: grab; /* Menandakan bisa diseret */
+    cursor: grab;
+    background-color: #f9f9f9; 
 }
 
 #canvas-wrapper.dragging {
@@ -106,13 +118,11 @@ p {
     background-color: #ffc107;
     color: #333;
     border-radius: 4px;
-    display: none;
+    display: block; 
     font-weight: bold;
 }
 
-/* Hapus semua style untuk #order-controls, #sortable-list, .image-order-item, .sortable-ghost */
-
-/* Penyesuaian Responsif */
+/* Penyesuaian Responsif untuk Desktop */
 @media (min-width: 768px) {
     #website-title {
         font-size: 3.5em;
@@ -120,11 +130,14 @@ p {
     h2 {
         font-size: 2em;
     }
-    .custom-file-upload, #download-btn {
-        max-width: 45%; 
-        display: inline-block;
+
+    .action-buttons {
+        /* Kembali ke flex-row tapi hanya ada satu item, jadi akan memenuhi lebar penuh */
+        flex-direction: row;
+        justify-content: center; /* Pusatkan tombol jika hanya satu */
     }
-    .custom-file-upload {
-        margin-right: 10px;
+    
+    #download-btn {
+        max-width: 400px; /* Batasi lebar tombol di desktop agar tidak terlalu besar */
     }
 }
